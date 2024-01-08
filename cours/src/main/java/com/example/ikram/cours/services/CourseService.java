@@ -10,8 +10,14 @@ public class CourseService {
     @Autowired
     private CoursRepository coursRepository;
 
-    private String Create(Cours c){
+    private Cours Create(Cours c){
+       Cours cours= coursRepository.save(c);
+       return cours;
 
+    }
+    private Cours findCoursById(Long id ){
+        Cours cours = coursRepository.findBy(id);
+        return  cours;
     }
 
 }
